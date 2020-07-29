@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { change } from "../../redux/taskActions.js";
 import "./popap.scss";
 
-function Popap({ titleChange, descriptionChange, id, category, date, setShowPopap }) {
+function Popap({ titleChange, descriptionChange, id, category, date, setShowPopap, changeTask }) {
 
     const [title, setTitle] = useState(titleChange);
     const [description, setDescription] = useState(descriptionChange);
@@ -26,7 +25,7 @@ function Popap({ titleChange, descriptionChange, id, category, date, setShowPopa
             <input type="text" value={title} onChange={onChangeTitle} />
             <input type="text" value={description} onChange={onChangeDescription} />
             <button onClick={
-                change(id, {
+                changeTask(id, {
                     title: title,
                     date: date,
                     description: description,

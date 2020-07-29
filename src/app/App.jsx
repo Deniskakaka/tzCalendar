@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 import { getDaysArrayByMonth, filterTasks } from "../generalFunction.js";
-import { getList, delTask } from "../redux/taskActions.js";
+import { getList, delTask, change } from "../redux/taskActions.js";
 import FormCreate from "../components/formCreate/FormCreate.jsx";
 import Tomorrow from "../components/Tomorrow.jsx";
 import NeverMind from "../components/NeverMind.jsx";
@@ -9,7 +9,7 @@ import Urgently from "../components/Urgently.jsx";
 import Popap from "../components/popap/Popap.jsx";
 import "./app.scss";
 
-function App({ listTasks, get, del }) {
+function App({ listTasks, get, del, changeTask }) {
 
     useEffect(() => {
         get()
@@ -40,6 +40,7 @@ function App({ listTasks, get, del }) {
                 category={category}
                 get={get}
                 setShowPopap={setShowPopap}
+                changeTask={changeTask}
             /> : ""}
             <FormCreate
                 get={get}
@@ -102,7 +103,8 @@ const mapState = state => {
 
 const mapDispatch = {
     get: getList,
-    del: delTask
+    del: delTask,
+    changeTask: change
 }
 
 export default connect(mapState, mapDispatch)(App)
