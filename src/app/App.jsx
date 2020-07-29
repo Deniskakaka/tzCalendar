@@ -46,7 +46,6 @@ function App({ listTasks, get, del, changeTask }) {
                 id={id}
                 date={date}
                 category={category}
-                get={get}
                 setShowPopap={setShowPopap}
                 changeTask={changeTask}
             /> : ""}
