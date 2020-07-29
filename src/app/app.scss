@@ -1,0 +1,73 @@
+.month{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-width: 500px;
+}
+
+.day{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid grey;
+    width: 100%;
+    line-height: 100px;
+    background-color: deepskyblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.green{
+    background-color: green;
+}
+
+.tasks{
+    display: flex;
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+}
+
+.urgently,
+.neverMind,
+.tommorow{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    border: none;
+    flex-grow: 1;
+    border-radius: 10px;
+    background-color: white;
+    margin-left: 5px;
+}
+
+.task{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-grow: 1;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5px 10px;
+
+    & span {
+        border: 1px solid;
+    }
+
+    & button {
+        width: 40%;
+        align-self: center;
+        height: 20px;
+        border: 1px solid green;
+        background-color: green;
+        border-radius: 10px;
+    }
+
+    & :nth-child(3){
+        background-color: red;
+        border: 1px solid red;
+    } 
+}
