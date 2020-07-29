@@ -27,11 +27,11 @@ function App({ listTasks, get, del, changeTask }) {
     function showTasksDay(event) {
         if (!isNaN(+event.target.innerHTML)) {
             event.persist()
-            if (!showPopap) setTimeout(() => { setShowTasks(event.target.innerHTML) }, 500) 
+            if (!showPopap) setTimeout(() => { setShowTasks(event.target.innerHTML) }, 500)
         }
     }
 
-    function changeTaskPoints (title, description, date, id, category) {
+    function changeTaskPoints(title, description, date, id, category) {
         setTitleChange(title)
         setDescriptionChange(description)
         setId(id)
@@ -65,8 +65,8 @@ function App({ listTasks, get, del, changeTask }) {
                 category={category}
                 setCategory={setCategory}
             />
-            <button onClick={next}>next</button>
-            <button onClick={prev}>prev</button>
+            <button onClick={next}>nextMonth</button>
+            <button onClick={prev}>prevMonth</button>
             <div className="month">
                 {getDaysArrayByMonth(changeMonth)[0].format("MMMM-YYYY")}
                 {getDaysArrayByMonth(changeMonth).map(day =>

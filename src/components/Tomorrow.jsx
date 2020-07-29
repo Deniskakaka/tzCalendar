@@ -17,7 +17,12 @@ function Tomorrow({
                     <button onClick={() => del(task.id)}>X</button>
                     <button onClick={() => {
                             show(true),
-                            changeTaskPoints(task.title, task.description, task.date, task.id, task.category)
+                            changeTaskPoints(
+                                task.title, 
+                                task.description, 
+                                task.date, 
+                                task.id, 
+                                task.category)
                     }}>Change</button>
                 </div>
             )}

@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import "./popap.scss";
 
-function Popap({ titleChange, descriptionChange, id, category, date, setShowPopap, changeTask }) {
+function Popap({
+    titleChange,
+    descriptionChange,
+    id,
+    category,
+    date,
+    setShowPopap,
+    changeTask
+}) {
 
     const [title, setTitle] = useState(titleChange);
     const [description, setDescription] = useState(descriptionChange);

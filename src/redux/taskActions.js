@@ -15,13 +15,13 @@ export function getList() {
     return function(dispatch) {
         getListTasks().then(res => dispatch(ListTasks(res)))
     }
-};
+}
 
 export function delTask(id) {
     return function(dispatch) {
         deleteTask(id).then(() => dispatch(getList()))
     }
-};
+}
 
 export function change(id, task) {
     return function(dispatch) {
