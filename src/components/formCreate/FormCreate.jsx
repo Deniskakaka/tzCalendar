@@ -6,6 +6,11 @@ function FormCreate({ get, setDate, date, setCategory, category }) {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const obj = {
+        title: title,
+        description: description,
+        date: date
+    }
 
     function preventSubmit(e) {
         e.preventDefault()
@@ -48,7 +53,7 @@ function FormCreate({ get, setDate, date, setCategory, category }) {
             </select>
             <button
                 onClick={() => {
-                    title !== "" && date !== "" && description !== "" ?
+                    Object.values(obj).every(elem => elem) ?
                         createTask({
                             title: title,
                             date: date,
