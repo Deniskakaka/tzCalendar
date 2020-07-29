@@ -30,6 +30,14 @@ function App({ listTasks, get, del, changeTask }) {
         }
     }
 
+    function changeTaskPoints (title, description, date, id, category) {
+        setTitleChange(title)
+        setDescriptionChange(description)
+        setId(id)
+        setDate(date)
+        setCategory(category)
+    }
+
     return (
         <>
             {showPopap ? <Popap
@@ -61,31 +69,19 @@ function App({ listTasks, get, del, changeTask }) {
                                     del={del}
                                     tasksList={filterTasks(day.format("YYYY-MM-DD"), listTasks)}
                                     show={setShowPopap}
-                                    setTitle={setTitleChange}
-                                    setDescription={setDescriptionChange}
-                                    setId={setId}
-                                    setDate={setDate}
-                                    setCategory={setCategory}
+                                    changeTaskPoints={changeTaskPoints}
                                 />
                                 <NeverMind
                                     del={del}
                                     tasksList={filterTasks(day.format("YYYY-MM-DD"), listTasks)}
                                     show={setShowPopap}
-                                    setTitle={setTitleChange}
-                                    setDescription={setDescriptionChange}
-                                    setId={setId}
-                                    setDate={setDate}
-                                    setCategory={setCategory}
+                                    changeTaskPoints={changeTaskPoints}
                                 />
                                 <Tomorrow
                                     del={del}
                                     tasksList={filterTasks(day.format("YYYY-MM-DD"), listTasks)}
                                     show={setShowPopap}
-                                    setTitle={setTitleChange}
-                                    setDescription={setDescriptionChange}
-                                    setId={setId}
-                                    setDate={setDate}
-                                    setCategory={setCategory}
+                                    changeTaskPoints={changeTaskPoints}
                                 />
                             </div> : ""}
                     </div>

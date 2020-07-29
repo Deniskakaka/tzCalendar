@@ -5,11 +5,7 @@ function NeverMind({
     del,
     tasksList,
     show,
-    setTitle,
-    setDescription,
-    setId,
-    setDate,
-    setCategory
+    changeTaskPoints
 }) {
     return (
         <div className="neverMind">
@@ -21,11 +17,7 @@ function NeverMind({
                     <button onClick={() => del(task.id)}>X</button>
                     <button onClick={() => {
                             show(true),
-                            setTitle(task.title),
-                            setDescription(task.description),
-                            setId(task.id), 
-                            setDate(task.date),
-                            setCategory(task.category)
+                            changeTaskPoints(task.title, task.description, task.date, task.id , task.category)
                     }}>Change</button>
                 </div>
             )}
