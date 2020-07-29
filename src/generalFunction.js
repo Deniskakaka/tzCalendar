@@ -1,11 +1,11 @@
 import moment from "moment";
 
-export function getDaysArrayByMonth() {
-  let daysInMonth = moment().daysInMonth();
+export function getDaysArrayByMonth(month) {
+  let daysInMonth = moment().add(month, "month").daysInMonth();
   let arrDays = [];
 
   while (daysInMonth) {
-    let current = moment().date(daysInMonth);
+    let current = moment().add(month, "month").date(daysInMonth);
     arrDays.unshift(current);
     daysInMonth--;
   }

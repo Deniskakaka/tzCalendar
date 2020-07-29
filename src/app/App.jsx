@@ -22,6 +22,7 @@ function App({ listTasks, get, del, changeTask }) {
     const [id, setId] = useState("");
     const [date, setDate] = useState("");
     const [category, setCategory] = useState("not very urgent");
+    const [changeMonth, setChangeMonth] = useState(0);
 
     function showTasksDay(event) {
         if (!isNaN(+event.target.innerHTML)) {
@@ -36,6 +37,14 @@ function App({ listTasks, get, del, changeTask }) {
         setId(id)
         setDate(date)
         setCategory(category)
+    }
+
+    function next() {
+        setChangeMonth(changeMonth + 1)
+    }
+
+    function prev() {
+        setChangeMonth(changeMonth - 1)
     }
 
     return (
@@ -56,8 +65,11 @@ function App({ listTasks, get, del, changeTask }) {
                 category={category}
                 setCategory={setCategory}
             />
+            <button onClick={next}>next</button>
+            <button onClick={prev}>prev</button>
             <div className="month">
-                {getDaysArrayByMonth().map(day =>
+                {getDaysArrayByMonth(changeMonth)[0].format("MMMM-YYYY")}
+                {getDaysArrayByMonth(changeMonth).map(day =>
                     <div key={Math.random()}
                         className={showTasks === day.format("DD") ? "day green" : "day"}
                         onClick={showTasksDay}>
